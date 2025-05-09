@@ -26,6 +26,10 @@ public class ProductEn {
     @Column(name = "selling_price", precision = 10, scale = 2)
     private BigDecimal sellingPrice;
 
+    @ManyToOne
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private CategoriesEn categoriesEn;
+
     public Integer getIdProducts() {
         return idProducts;
     }

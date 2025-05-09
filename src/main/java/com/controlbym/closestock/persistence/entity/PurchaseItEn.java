@@ -8,44 +8,20 @@ import java.math.BigDecimal;
 @Table(name = "purchase_items")
 public class PurchaseItEn {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer idPurchaseItEn;
-
-    @Column(name = "purchase_id")
-    private Integer purchaseId;
-
-    @Column(name = "product_id")
-    private Integer productId;
+    @EmbeddedId
+    private PurchaseItPKEn id;
 
     private Integer quantity;
 
-    @Column(name = "cost_per_unit", precision = 10, scale = 2)
+    @Column(name = "cost_per_unit")
     private BigDecimal costPerUnit;
 
-    public Integer getIdPurchaseItEn() {
-        return idPurchaseItEn;
+    public PurchaseItPKEn getId() {
+        return id;
     }
 
-    public void setIdPurchaseItEn(Integer idPurchaseItEn) {
-        this.idPurchaseItEn = idPurchaseItEn;
-    }
-
-    public Integer getPurchaseId() {
-        return purchaseId;
-    }
-
-    public void setPurchaseId(Integer purchaseId) {
-        this.purchaseId = purchaseId;
-    }
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setId(PurchaseItPKEn id) {
+        this.id = id;
     }
 
     public Integer getQuantity() {
