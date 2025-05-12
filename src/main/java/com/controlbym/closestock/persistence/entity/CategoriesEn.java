@@ -14,11 +14,19 @@ public class CategoriesEn {
 
     private String name;
 
-    @OneToMany(mappedBy = "categoriesEn")
+    @OneToMany(mappedBy = "categoriesEn") //Tener en cuenta que categoriesEn es la variable contenida dentro de la clase ProductEn y no es la Clase en si
     private List<ProductEn> productEns;
 
     public Integer getIdCategories() {
         return idCategories;
+    }
+
+    public List<ProductEn> getProductEns() {
+        return productEns;
+    }
+
+    public void setProductEns(List<ProductEn> productEns) {
+        this.productEns = productEns;
     }
 
     public void setIdCategories(Integer idCategories) {
